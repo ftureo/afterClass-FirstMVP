@@ -1,7 +1,9 @@
+import ItemCount from "./ItemCount";
+
 function ItemListContainer() {
     return(
         <div>
-            <p>Soy el <code>ItemListContainer</code></p>
+            <ItemCount stock={ 10 } initial={ 1 }/>
         </div>
     )
 }
