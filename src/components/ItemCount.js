@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { Button } from 'reactstrap';
 
@@ -32,12 +33,39 @@ function ItemCount(props){
         // Aplico el método JSON() para extraer la respuesta a la petición
         const responseData = await data.json()
         // Vemos qué llegó
-        console.log(responseData)
+        console.log("Soy la data del JSON:", responseData)
+    }
+
+    // API CALL  - Llamado a un archivo servidor 
+    const getProductsSimon = async() => {
+        // Espero a que la data se fetchee
+        const dataSimon = await fetch('http://localhost:4000/products')
+        // Aplico el método JSON() para extraer la respuesta a la petición
+        const responseDataSimon = await dataSimon.json()
+        // Vemos qué llegó
+        console.log("Soy la data de Simón", responseDataSimon)
+    }
+
+    // API CALL  - Llamado a un archivo servidor utilizando la librería AXIOS
+    const getProductsAxios = async() => {
+        //Acá le indico el verbo HTTP para la solicitud
+        const dataProductAxios = await axios.get('http://localhost:4000/products')
+        //Vemos todo lo que nos devuelve Axios
+        console.log("Soy la respuesta que Axios", dataProductAxios)
+        // Acá guardamos solamente lo que nos interesa
+        const dataAxios = dataProductAxios.data
+        console.log(dataAxios)
     }
 
     useEffect(() => {
-        getProducts()
+        setTimeout(() => getProducts(), 2000)
     },[])
+    useEffect(() => {
+        setTimeout(() => getProductsSimon(), 4000)
+    })
+    useEffect(() => {
+        setTimeout(() => getProductsAxios(), 6000)
+    })
 
     return(
         <div className= 'containerItemCount'>
