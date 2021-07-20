@@ -41,7 +41,7 @@ app.get('/product/category/:categoryID', (req,res) => {
     console.log('estamos Seleccion de categorias');
     let categoria = req.params.categoryID;
     //categoria = id.substring(1);
-    console.log(categoria);
+    console.log(categoria);console.log(categoria);
    var json = fs.readFileSync('./list.json',"utf8",(err,content) =>{
        err ? console.log(err):JSON.parse(content);
     });

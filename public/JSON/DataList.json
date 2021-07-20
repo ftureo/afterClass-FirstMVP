@@ -6,6 +6,7 @@
         "title":"Ryzen 5900x",
         "descripcion": "este es el primer producto",
         "categoria":"Procesadores",
+        "price": "73000",
         "stock": "4"
     },
     {
@@ -37,7 +38,7 @@
     },
     {
         "id":5,
-        "image":"https://www.asrock.com/Graphics-Card/photo/Radeon%20RX%206900%20XT%20Phantom%20Gaming%20D%2016G%20OC(M1).png",
+        "image":"https://m.media-amazon.com/images/I/81U5H5c0jyL._AC_SL1500_.jpg",
         "title":"Radeon 6900XT",
         "descripcion": "este es el primer producto",
         "categoria":"Placas-de-video",

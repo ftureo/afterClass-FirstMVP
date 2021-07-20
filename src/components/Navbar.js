@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import {
     Collapse,
@@ -26,15 +27,16 @@ function NavBar(){
             <div className='navbar-right'>
                 <NavbarToggler onClick={toggle} />
                 <Collapse isOpen={isOpen} navbar>   
-                    <Nav className="mr-auto" navbar>
+                    <Nav className="linksNav" navbar>
+                        <Link to='/'className='nav-item'>Productos</Link>
                         <UncontrolledDropdown nav inNavbar>
                             <DropdownToggle nav caret>
-                                Productos
+                                Categorías
                             </DropdownToggle>
                             <DropdownMenu right>
-                                <DropdownItem>Placas de Vídeo</DropdownItem>
-                                <DropdownItem>Procesadores</DropdownItem>
-                                <DropdownItem>Periféricos</DropdownItem>
+                            <Link to='/Productos/Categoria/Placas-de-video'><DropdownItem>Placas de Vídeo</DropdownItem></Link>
+                            <Link to='/Productos/Categoria/Procesadores'><DropdownItem>Procesadores</DropdownItem></Link>
+                            <Link to='/Productos/Categoria/perifericos'><DropdownItem>Perifericos</DropdownItem></Link>
                             </DropdownMenu>
                         </UncontrolledDropdown>
                     </Nav>
